@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+  color: #1a202c;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 35s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@layer components {
+  .section-header {
+    @apply text-xl font-bold mb-8 text-gray-800 border-b pb-4 flex items-center;
+  }
+  .label {
+    @apply block text-sm font-bold text-gray-800 mb-2 tracking-wide;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-500/10 outline-none transition-all duration-200 bg-white font-medium text-gray-900 shadow-sm hover:border-gray-400 placeholder-gray-400;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #94a3b8;
+  border-radius: 20px;
+}
